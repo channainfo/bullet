@@ -43,9 +43,9 @@ module Bullet
     end
 
     def add_footer_note(response_body)
-      bullet_footer = "<div #{footer_div_attributes}>" + Bullet.footer_info.uniq.join("<br>") + "</div>"
-      return response_body[0...-7] + bullet_footer + "</html>" if response_body.end_with?("</html>")
-      response_body + bullet_footer
+      bullet_footer_info = "<div #{footer_div_attributes}>" + Bullet.footer_info.uniq.join("<br>") + "</div>"
+      return response_body[0...-7] + bullet_footer_info + "</html>" if response_body.end_with?("</html>")
+      response_body + bullet_footer_info
       end
     end
 
